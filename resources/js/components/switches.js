@@ -5,17 +5,17 @@ import fanOff from './images/fanOff.jpg';
 import fanOn from './images/fanOn.jpg';
 import bulbOff from './images/bulbOff.jpg';
 import bulbOn from './images/bulbOn.jpg';
-import fridgeOn from './images/tvOn.jpg';
-import fridgeOff from './images/tvOff.jpg';
+import tvOn from './images/tvOn.jpg';
+import tvOff from './images/tvOff.jpg';
 
 class Switches extends React.PureComponent{
     constructor(props){
         super(props)
 
-        this.state = {'fan':0,'bulb':0,'fridge':0,'fanOld' : 0,'bulbOld':0,'fridgeOld' :0 };
+        this.state = {'fan':0,'bulb':0,'tv':0,'fanOld' : 0,'bulbOld':0,'tvOld' :0 };
         this.handleSwitchFan = this.handleSwitchFan.bind(this);
         this.handleSwitchBulb = this.handleSwitchBulb.bind(this);
-        this.handleSwitchFridge = this.handleSwitchFridge.bind(this);
+        this.handleSwitchtv = this.handleSwitchtv.bind(this);
         
         
     }
@@ -26,14 +26,14 @@ class Switches extends React.PureComponent{
             //console.log(response.data);
             //console.log(response.data.fan); 
             //console.log(response.data.bulb);
-            //console.log(response.data.fridge); 
+            //console.log(response.data.tv); 
             this.setState({
                 'fan' : response.data.fan,
                 'bulb' : response.data.bulb,
-                'fridge' : response.data.fridge,
+                'tv' : response.data.tv,
                 'fanOld' : response.data.fan,
                 'bulbOld' : response.data.bulb,
-                'fridgeOld' : response.data.fridge
+                'tvOld' : response.data.tv
                 
             });
      
@@ -49,13 +49,13 @@ class Switches extends React.PureComponent{
         //send request only if any of the switch state changes
         if((this.state.fan != this.state.fanOld) || 
         (this.state.bulb != this.state.bulbOld) ||
-        (this.state.fridge != this.state.fridgeOld)  )
+        (this.state.tv != this.state.tvOld)  )
         {
                 //console.log('One Device as been updated');
                 const content ={    
                     'fan' : this.state.fan ,
                     'bulb' : this.state.bulb,
-                    'fridge' : this.state.fridge
+                    'tv' : this.state.tv
                 };
                 axios.post('/api/',content).then(response=>{
                     //console.log(response.data);
@@ -67,7 +67,7 @@ class Switches extends React.PureComponent{
                 this.setState({
                     'fanOld' : this.state.fan,
                     'bulbOld' : this.state.bulb,
-                    'fridgeOld' : this.state.fridge
+                    'tvOld' : this.state.tv
                 })
         }
     }
@@ -84,9 +84,9 @@ class Switches extends React.PureComponent{
         
     }
 
-    handleSwitchFridge(){
+    handleSwitchtv(){
         this.setState({
-            'fridge' : !this.state.fridge      
+            'tv' : !this.state.tv      
         });    
     }
 
@@ -97,7 +97,7 @@ class Switches extends React.PureComponent{
                 <h3 className="alert-success">Iot Switches</h3>
                 <Fan Status={this.state.fan} onClick={this.handleSwitchFan}/>Fan Status: <button onClick={this.handleSwitchFan}>{this.state.fan?'ON':'OFF'}</button><br/>
                 <Bulb Status={this.state.bulb} onClick={this.handleSwitchBulb}/>Bulb Status: <button onClick={this.handleSwitchBulb}>{this.state.bulb?'ON':'OFF'}</button><br/>
-                <Fridge Status={this.state.fridge} onClick={this.handleSwitchFridge} /> Tv Status: <button onClick={this.handleSwitchFridge}>{this.state.fridge?'ON':'OFF'}</button>
+                <Tv Status={this.state.tv} onClick={this.handleSwitchtv} /> Tv Status: <button onClick={this.handleSwitchtv}>{this.state.tv?'ON':'OFF'}</button>
                 
             </div>
 
@@ -127,14 +127,14 @@ function Fan(props){
     )
 }
 
-function Fridge(props){
+function Tv(props){
     var style ={
         height : '100px',
         width : '100px'
     }
     return(
-        <img src={props.Status ? fridgeOn : fridgeOff} 
-        onClick={props.onClick} alt="Fridge" style={style}/>
+        <img src={props.Status ? tvOn : tvOff} 
+        onClick={props.onClick} alt="tv" style={style}/>
     )
 }
 
@@ -142,4 +142,3 @@ function Fridge(props){
     if (document.getElementById('switches')) {
     ReactDOM.render(<Switches/>,document.getElementById('switches'));
     }
-

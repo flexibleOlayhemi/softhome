@@ -66143,14 +66143,14 @@ var Switches = /*#__PURE__*/function (_React$PureComponent) {
     _this.state = {
       'fan': 0,
       'bulb': 0,
-      'fridge': 0,
+      'tv': 0,
       'fanOld': 0,
       'bulbOld': 0,
-      'fridgeOld': 0
+      'tvOld': 0
     };
     _this.handleSwitchFan = _this.handleSwitchFan.bind(_assertThisInitialized(_this));
     _this.handleSwitchBulb = _this.handleSwitchBulb.bind(_assertThisInitialized(_this));
-    _this.handleSwitchFridge = _this.handleSwitchFridge.bind(_assertThisInitialized(_this));
+    _this.handleSwitchtv = _this.handleSwitchtv.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -66163,14 +66163,14 @@ var Switches = /*#__PURE__*/function (_React$PureComponent) {
         //console.log(response.data);
         //console.log(response.data.fan); 
         //console.log(response.data.bulb);
-        //console.log(response.data.fridge); 
+        //console.log(response.data.tv); 
         _this2.setState({
           'fan': response.data.fan,
           'bulb': response.data.bulb,
-          'fridge': response.data.fridge,
+          'tv': response.data.tv,
           'fanOld': response.data.fan,
           'bulbOld': response.data.bulb,
-          'fridgeOld': response.data.fridge
+          'tvOld': response.data.tv
         });
       })["catch"](function (error) {
         console.log(error);
@@ -66181,12 +66181,12 @@ var Switches = /*#__PURE__*/function (_React$PureComponent) {
     key: "componentDidUpdate",
     value: function componentDidUpdate() {
       //send request only if any of the switch state changes
-      if (this.state.fan != this.state.fanOld || this.state.bulb != this.state.bulbOld || this.state.fridge != this.state.fridgeOld) {
+      if (this.state.fan != this.state.fanOld || this.state.bulb != this.state.bulbOld || this.state.tv != this.state.tvOld) {
         //console.log('One Device as been updated');
         var content = {
           'fan': this.state.fan,
           'bulb': this.state.bulb,
-          'fridge': this.state.fridge
+          'tv': this.state.tv
         };
         axios__WEBPACK_IMPORTED_MODULE_2___default.a.post('/api/', content).then(function (response) {//console.log(response.data);
         })["catch"](function (error) {
@@ -66196,7 +66196,7 @@ var Switches = /*#__PURE__*/function (_React$PureComponent) {
         this.setState({
           'fanOld': this.state.fan,
           'bulbOld': this.state.bulb,
-          'fridgeOld': this.state.fridge
+          'tvOld': this.state.tv
         });
       }
     }
@@ -66215,10 +66215,10 @@ var Switches = /*#__PURE__*/function (_React$PureComponent) {
       });
     }
   }, {
-    key: "handleSwitchFridge",
-    value: function handleSwitchFridge() {
+    key: "handleSwitchtv",
+    value: function handleSwitchtv() {
       this.setState({
-        'fridge': !this.state.fridge
+        'tv': !this.state.tv
       });
     }
   }, {
@@ -66236,12 +66236,12 @@ var Switches = /*#__PURE__*/function (_React$PureComponent) {
         onClick: this.handleSwitchBulb
       }), "Bulb Status: ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.handleSwitchBulb
-      }, this.state.bulb ? 'ON' : 'OFF'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Fridge, {
-        Status: this.state.fridge,
-        onClick: this.handleSwitchFridge
+      }, this.state.bulb ? 'ON' : 'OFF'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Tv, {
+        Status: this.state.tv,
+        onClick: this.handleSwitchtv
       }), " Tv Status: ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: this.handleSwitchFridge
-      }, this.state.fridge ? 'ON' : 'OFF'));
+        onClick: this.handleSwitchtv
+      }, this.state.tv ? 'ON' : 'OFF'));
     }
   }]);
 
@@ -66274,7 +66274,7 @@ function Fan(props) {
   });
 }
 
-function Fridge(props) {
+function Tv(props) {
   var style = {
     height: '100px',
     width: '100px'
@@ -66282,7 +66282,7 @@ function Fridge(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: props.Status ? _images_tvOn_jpg__WEBPACK_IMPORTED_MODULE_7___default.a : _images_tvOff_jpg__WEBPACK_IMPORTED_MODULE_8___default.a,
     onClick: props.onClick,
-    alt: "Fridge",
+    alt: "tv",
     style: style
   });
 }
