@@ -66188,7 +66188,8 @@ var Switches = /*#__PURE__*/function (_React$PureComponent) {
           'bulb': this.state.bulb,
           'tv': this.state.tv
         };
-        axios__WEBPACK_IMPORTED_MODULE_2___default.a.post('/api/', content).then(function (response) {//console.log(response.data);
+        axios__WEBPACK_IMPORTED_MODULE_2___default.a.post('/api/', content).then(function (response) {
+          console.log(response.data);
         })["catch"](function (error) {
           console.log(error);
         }); //update Old with New value

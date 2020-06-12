@@ -58,7 +58,7 @@ class Switches extends React.PureComponent{
                     'tv' : this.state.tv
                 };
                 axios.post('/api/',content).then(response=>{
-                    //console.log(response.data);
+                    console.log(response.data);
                 })
                 .catch(error=>{
                     console.log(error);
