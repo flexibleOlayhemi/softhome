@@ -18,4 +18,9 @@ Route::get('/',function(){
     return view('switches');
 });
 
+//response route on call
 Route::get('/status','iotController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
