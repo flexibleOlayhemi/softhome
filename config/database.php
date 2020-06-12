@@ -17,7 +17,8 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'pgsql'),
+    //'default' => env('DB_CONNECTION', 'pgsql'),
+    'default' => 'pgsql',
     
 
     /*
@@ -69,12 +70,12 @@ return [
 
         'pgsql' => [
             'driver' => 'pgsql',
-            //'url' => $DATABASE_URL["host"],
-            'host' => $DATABASE_URL["host"],
-            'port' => $DATABASE_URL["port"],
-            'database' => ltrim($DATABASE_URL["path"],"/"),
-            'username' => $DATABASE_URL["user"],
-            'password' => $DATABASE_URL["pass"],
+            'url' => 'postgres://utbwbgcagxjdmp:294d8b51f7f24a8a75bdfc44de794ebb78a8a53ec6146831e1b8a8732139e71a@ec2-50-17-90-177.compute-1.amazonaws.com:5432/d2pea9a43fa34g',
+            'host' => 'ec2-50-17-90-177.compute-1.amazonaws.com',
+            'port' => '5432',
+            'database' => 'd2pea9a43fa34g',
+            'username' => 'utbwbgcagxjdmp',
+            'password' => '294d8b51f7f24a8a75bdfc44de794ebb78a8a53ec6146831e1b8a8732139e71a',
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
