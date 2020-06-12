@@ -23,7 +23,7 @@ class Switches extends React.PureComponent{
     componentDidMount(){
             axios.get('/status').then((response)=>{
              
-            //console.log(response.data);
+            console.log(response.data);
             //console.log(response.data.fan); 
             //console.log(response.data.bulb);
             //console.log(response.data.tv); 
@@ -97,7 +97,7 @@ class Switches extends React.PureComponent{
                 <h3 className="alert-success">Iot Switches</h3>
                 <Fan Status={this.state.fan} onClick={this.handleSwitchFan}/>Fan Status: <button onClick={this.handleSwitchFan}>{this.state.fan?'ON':'OFF'}</button><br/>
                 <Bulb Status={this.state.bulb} onClick={this.handleSwitchBulb}/>Bulb Status: <button onClick={this.handleSwitchBulb}>{this.state.bulb?'ON':'OFF'}</button><br/>
-                <Tv Status={this.state.tv} onClick={this.handleSwitchtv} /> Tv Status: <button onClick={this.handleSwitchtv}>{this.state.tv?'ON':'OFF'}</button>
+                <Television Status={this.state.tv} onClick={this.handleSwitchtv} /> Tv Status: <button onClick={this.handleSwitchtv}>{this.state.tv?'ON':'OFF'}</button>
                 
             </div>
 
@@ -127,7 +127,7 @@ function Fan(props){
     )
 }
 
-function Tv(props){
+function Television(props){
     var style ={
         height : '100px',
         width : '100px'

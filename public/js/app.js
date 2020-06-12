@@ -66160,10 +66160,10 @@ var Switches = /*#__PURE__*/function (_React$PureComponent) {
       var _this2 = this;
 
       axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('/status').then(function (response) {
-        //console.log(response.data);
-        //console.log(response.data.fan); 
+        console.log(response.data); //console.log(response.data.fan); 
         //console.log(response.data.bulb);
         //console.log(response.data.tv); 
+
         _this2.setState({
           'fan': response.data.fan,
           'bulb': response.data.bulb,
@@ -66237,7 +66237,7 @@ var Switches = /*#__PURE__*/function (_React$PureComponent) {
         onClick: this.handleSwitchBulb
       }), "Bulb Status: ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.handleSwitchBulb
-      }, this.state.bulb ? 'ON' : 'OFF'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Tv, {
+      }, this.state.bulb ? 'ON' : 'OFF'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Television, {
         Status: this.state.tv,
         onClick: this.handleSwitchtv
       }), " Tv Status: ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -66275,7 +66275,7 @@ function Fan(props) {
   });
 }
 
-function Tv(props) {
+function Television(props) {
   var style = {
     height: '100px',
     width: '100px'

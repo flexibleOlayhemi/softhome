@@ -14,16 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+
+
 Route::get('/',function(){
     return view('switches');
 });
-Route::get('/test',function(){
-    return "Test page ";
-});
-
-//response route on call
 Route::get('/status','iotController@index');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
