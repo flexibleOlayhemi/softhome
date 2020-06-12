@@ -18,7 +18,7 @@ Route::get('/',function(){
     return view('switches');
 });
 Route::get('/test',function(){
-    return (<h1> Test page </h1>);
+    return "Test page ";
 });
 
 //response route on call
