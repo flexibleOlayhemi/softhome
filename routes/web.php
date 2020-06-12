@@ -17,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',function(){
     return view('switches');
 });
+Route::get('/test',function(){
+    return (<h1> Test page </h1>);
+});
 
 //response route on call
 Route::get('/status','iotController@index');
