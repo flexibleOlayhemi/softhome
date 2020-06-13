@@ -66235,7 +66235,7 @@ var Switches = /*#__PURE__*/function (_React$PureComponent) {
       }, this.state.fan ? 'ON' : 'OFF'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Bulb, {
         Status: this.state.bulb,
         onClick: this.handleSwitchBulb
-      }), "Bulb Status: ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }), "BulbStatus: ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.handleSwitchBulb
       }, this.state.bulb ? 'ON' : 'OFF'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Television, {
         Status: this.state.tv,
