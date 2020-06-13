@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::post('/','iotController@update');
 
 
 
-Route::patch('/','iotController@update');
