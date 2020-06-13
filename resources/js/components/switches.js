@@ -22,6 +22,7 @@ class Switches extends React.PureComponent{
      
     componentDidMount(){
         var host = window.location.origin;
+        console.log(host);
             axios.get(host + '/status').then((response)=>{
              
             console.log(response.data);
@@ -59,6 +60,7 @@ class Switches extends React.PureComponent{
                     'tv' : this.state.tv
                 };
                 var host = window.location.origin;
+                console.log(host);
                 axios.post(host + '/api/',content).then(response=>{
                     console.log(response.data);
                 })
