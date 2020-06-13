@@ -17,4 +17,4 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::POST('/','iotController@update');
+Route::PUT('/','iotController@update');

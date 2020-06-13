@@ -61,7 +61,7 @@ class Switches extends React.PureComponent{
                 };
                 var host = window.location.origin;
                 console.log(host);
-                axios.post(host + '/api/',content).then(response=>{
+                axios.put(host + '/api/',content).then(response=>{
                     console.log(response.data);
                 })
                 .catch(error=>{
