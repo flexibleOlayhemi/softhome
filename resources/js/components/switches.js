@@ -59,6 +59,7 @@ class Switches extends React.PureComponent{
                     'bulb' : this.state.bulb,
                     'tv' : this.state.tv
                 };
+        
                 var host = window.location.origin;
                 console.log(host);
                 axios.post(host + '/api',content).then(response=>{
