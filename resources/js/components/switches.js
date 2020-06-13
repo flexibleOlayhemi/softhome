@@ -21,7 +21,8 @@ class Switches extends React.PureComponent{
     }
      
     componentDidMount(){
-            axios.get('/status').then((response)=>{
+        var host = window.location.origin;
+            axios.get(host + '/status').then((response)=>{
              
             console.log(response.data);
             //console.log(response.data.fan); 
@@ -57,7 +58,8 @@ class Switches extends React.PureComponent{
                     'bulb' : this.state.bulb,
                     'tv' : this.state.tv
                 };
-                axios.post('/api/',content).then(response=>{
+                var host = window.location.origin;
+                axios.post(host + '/api/',content).then(response=>{
                     console.log(response.data);
                 })
                 .catch(error=>{
