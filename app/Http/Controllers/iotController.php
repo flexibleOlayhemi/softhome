@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facade\DB;
 use App\swiotmodel;
+use App\Events\statusUpdatedEvent;
 
 class iotController extends Controller
 {
@@ -18,9 +19,12 @@ class iotController extends Controller
     public function update(Request $request){
        
          swiotmodel::first()->update(['fan'=>$request['fan'],'bulb'=>$request['bulb'],'tv'=>$request['tv']]);
+        event(new statusUpdatedEvent('Status as been updated'));
         return response()->json([
             'message' => 'Status Updated'
          ]);
+
+         
 
     }
 }

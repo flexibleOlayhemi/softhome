@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('/','iotController@update');
+Route::post('/status/update','iotController@update')->name('update');
 
 
 

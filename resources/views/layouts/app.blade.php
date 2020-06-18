@@ -12,6 +12,20 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
+    <!--Pusher Scripts -->
+    <script src="https://js.pusher.com/6.0/pusher.min.js"></script>
+    
+    
+    <script>
+        //Pusher.logToConsole =false;
+        var pusher = new Pusher('d2c992058332c04bfd0c',{ cluster: 'eu'}); 
+        var channel = pusher.subscribe('softworkiot');
+        channel.bind('status-updated', function(data) {
+            window.location.reload();
+            //alert(JSON.stringify(data));
+        });
+    </script>
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
