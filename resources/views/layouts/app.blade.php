@@ -21,8 +21,8 @@
         var pusher = new Pusher('d2c992058332c04bfd0c',{ cluster: 'eu'}); 
         var channel = pusher.subscribe('softworkiot');
         channel.bind('status-updated', function(data) {
-            window.location.reload();
-            //alert(JSON.stringify(data));
+            //window.location.reload();
+            alert(JSON.stringify(data));
         });
     </script>
 
