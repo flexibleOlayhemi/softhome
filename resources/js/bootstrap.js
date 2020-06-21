@@ -39,3 +39,4 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
      cluster: 'eu',
      encrypted: true
  }); 
+

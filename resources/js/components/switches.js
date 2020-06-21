@@ -76,6 +76,12 @@ class Switches extends React.PureComponent{
                     'tvOld' : this.state.tv
                 })
         }
+
+           //listeneing
+           window.Echo.channel('softworkiot')
+           .listen('.status-updated',(e)=>{
+               window.location.reload();
+           });
     }
    
     handleSwitchFan(){  

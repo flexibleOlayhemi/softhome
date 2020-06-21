@@ -12,8 +12,9 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
-    <!--Pusher Scripts
+    <!--Pusher Scripts--> 
     <script src="https://js.pusher.com/6.0/pusher.min.js"></script>
+    
     
     
     <script>
@@ -22,15 +23,13 @@
         var channel = pusher.subscribe('softworkiot');
         channel.bind('status-updated', function(data) {
             //window.location.reload();
-            alert(JSON.stringify(data));
+            //alert(JSON.stringify(data));
         });
-    </script>--> 
-    <script>
-        Echo.channel('softworkiot')
-        .listen('status-updated',(e)=>{
-            window.location.reload();
-        });
+
+     
     </script>
+    
+    
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">

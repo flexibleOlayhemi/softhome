@@ -17,14 +17,16 @@ class iotController extends Controller
    
 
     public function update(Request $request){
-       
+        
          swiotmodel::first()->update(['fan'=>$request['fan'],'bulb'=>$request['bulb'],'tv'=>$request['tv']]);
        
+         
          broadcast(new statusUpdatedEvent('Status as been updated'))->toOthers();
-        
          return response()->json([
             'message' => 'Status Updated'
          ]);
+
+         
          
 
     }
