@@ -12,7 +12,7 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
-    <!--Pusher Scripts -->
+    <!--Pusher Scripts
     <script src="https://js.pusher.com/6.0/pusher.min.js"></script>
     
     
@@ -23,6 +23,12 @@
         channel.bind('status-updated', function(data) {
             //window.location.reload();
             alert(JSON.stringify(data));
+        });
+    </script>--> 
+    <script>
+        Echo.channel('softworkiot')
+        .listen('status-updated',(e)=>{
+            window.location.reload();
         });
     </script>
 
@@ -47,7 +53,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        <li>Active</li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

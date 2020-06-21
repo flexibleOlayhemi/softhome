@@ -101,9 +101,12 @@ class Switches extends React.PureComponent{
             
             <div>
                 <h3 className="alert-success">Iot Switches</h3>
-                <Fan Status={this.state.fan} onClick={this.handleSwitchFan}/>Fan Status: <button onClick={this.handleSwitchFan}>{this.state.fan?'ON':'OFF'}</button><br/>
-                <Bulb Status={this.state.bulb} onClick={this.handleSwitchBulb}/>BulbStatus: <button onClick={this.handleSwitchBulb}>{this.state.bulb?'ON':'OFF'}</button><br/>
-                <Television Status={this.state.tv} onClick={this.handleSwitchtv} /> Tv Status: <button onClick={this.handleSwitchtv}>{this.state.tv?'ON':'OFF'}</button>
+                <Fan Status={this.state.fan} onClick={this.handleSwitchFan}/>
+                Fan Status: <button onClick={this.handleSwitchFan}>{this.state.fan?'ON':'OFF'}</button><br/>
+                <Bulb Status={this.state.bulb} onClick={this.handleSwitchBulb}/>
+                BulbStatus: <button onClick={this.handleSwitchBulb}>{this.state.bulb?'ON':'OFF'}</button><br/>
+                <Television Status={this.state.tv} onClick={this.handleSwitchtv} />
+                Tv Status: <button onClick={this.handleSwitchtv}>{this.state.tv?'ON':'OFF'}</button>
                 
             </div>
 
